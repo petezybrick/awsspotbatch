@@ -113,4 +113,3 @@ to reach out to me and we can do a GoToMeeting where I will present the PPT and 
 		
 		
 ##Any issues, please contact me at pete.zybrick@ipc-global.com or pzybrick@gmail.com, put "SpotBatch" in the subject
-	
