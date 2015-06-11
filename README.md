@@ -112,4 +112,4 @@ to reach out to me and we can do a GoToMeeting where I will present the PPT and 
 	* Note that depending on any errors you encounter, you may want to also purge the Master and Request SQS Queues
 		
 		
-##Any issues, please contact me at pete.zybrick@ipc-global.com or pzybrick@gmail.com, put "SpotBatch" in the subject..
+##Any issues, please contact me at pete.zybrick@ipc-global.com or pzybrick@gmail.com, put "SpotBatch" in the subject...
