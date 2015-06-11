@@ -1,0 +1,17 @@
+cd awsspotbatch/pythoninstall
+
+sudo rm -rf awsext-1.1
+tar -xvzf awsext-1.1.tar.gz
+cd awsext-1.1
+sudo python setup.py install
+cd ..
+sudo rm -rf awsext-1.1
+
+sudo rm -rf awsspotbatch-1.1
+tar -xvzf awsspotbatch-1.1.tar.gz
+cd awsspotbatch-1.1
+sudo python setup.py install
+cd ..
+sudo rm -rf awsspotbatch-1.1
+
+sudo service spotbatchservice restart

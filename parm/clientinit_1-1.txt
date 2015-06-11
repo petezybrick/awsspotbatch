@@ -1,0 +1,10 @@
+cd service
+tar xvzf awsext-1.1.tar.gz
+cd awsext-1.1
+sudo python setup.py install
+cd ~
+cd service
+tar xvzf awsspotbatch-1.1.tar.gz
+cd awsspotbatch-1.1
+sudo python setup.py install
+cd ~

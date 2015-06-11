@@ -1,0 +1,149 @@
+{
+	"dry_run": "false",
+	"script_name_args": 
+	[
+		"python",
+		"-m",
+		"datadepotextract.job.runextract",
+		"/tmp/datadepot.staging",
+		"userjobparmitem.json"
+	],
+
+	"primary_region_name": "us-east-1",
+	"profile_name": "None",
+	"region_names": 
+	[
+		"us-east-1"
+	],
+
+	"vpc_ids_by_region_names": 
+	{
+		"us-east-1": "vpc-f3f49896"
+	},
+
+	"spot_request_queue_region_name": "us-east-1",
+	"spot_request_queue_name": "spotbatch_spotrequest",
+	"service_bucket_name": "ipc-training.spotbatch.service",
+	"user_bucket_name": "ipc-training.spotbatch.user.first",
+	"ami_id": "ami-baddc9d2",
+	"num_instances": 1,
+	"instance_type": "m3.xlarge",
+	"instance_username": "ubuntu",
+	"inbound_rule_items": 
+	[
+		{
+			"from_port": 22,
+			"cidr_ip": "0.0.0.0/0"
+		},
+
+		{
+			"ip_protocol": "icmp",
+			"from_port": -1,
+			"to_port": -1,
+			"cidr_ip": "10.7.5.0/22"
+		}
+	],
+
+	"policy_statements": 
+	[
+		{
+			"Sid": "DataDepotBucket",
+			"Effect": "Allow",
+			"Action": 
+			[
+				"s3:ListObject",
+				"s3:GetObject"
+			],
+
+			"Resource": 
+			[
+				"arn:aws:s3:::ipc-training.spotbatch.user.datadepotextract/*",
+				"arn:aws:s3:::ipc-training.spotbatch.user.datadepotextract"
+			]
+		},
+
+		{
+			"Sid": "StagingBucket",
+			"Effect": "Allow",
+			"Action": 
+			[
+				"s3:ListObject",
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:ListBucket"
+			],
+
+			"Resource": 
+			[
+				"arn:aws:s3:::ipc-datadepot.staging/*",
+				"arn:aws:s3:::ipc-datadepot.staging"
+			]
+		},
+
+		{
+			"Sid": "UserCompressedFileBucket",
+			"Effect": "Allow",
+			"Action": 
+			[
+				"s3:CreateBucket",
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:GetObjectAcl",
+				"s3:PutObjectAcl",
+				"s3:PutBucketAcl",
+				"s3:PutLifecycleConfiguration"
+			],
+
+			"Resource": 
+			[
+				"arn:aws:s3:::ipc-bigdatadepot-output",
+				"arn:aws:s3:::ipc-bigdatadepot-output/*"
+			]
+		}
+	],
+
+	"spot_request_valid_for_minutes": 10,
+	"spot_query_max_bid": ".10",
+	"spot_query_region_names": 
+	[
+		"us-east-1"
+	],
+
+	"spot_query_regions_azs_subnets": 
+	{
+		"us-east-1": 
+		{
+			"us-east-1b": "subnet-32af0e19",
+			"us-east-1c": "subnet-1acd566d",
+			"us-east-1d": "subnet-cdae1694",
+			"us-east-1e": "subnet-45d69b7f"
+		}
+	},
+
+	"client_bootstrap_service_primary": "aws s3 sync s3://ipc-training.spotbatch.service service",
+	"client_bootstrap_service_cmds": 
+	[
+		"cd ~",
+		"cd service",
+		"tar xvzf awsext-1.1.tar.gz",
+		"cd awsext-1.1",
+		"sudo python setup.py install",
+		"cd ~",
+		"cd service",
+		"tar xvzf awsspotbatch-1.1.tar.gz",
+		"cd awsspotbatch-1.1",
+		"sudo python setup.py install",
+		"cd ~"
+	],
+
+	"client_bootstrap_user_cmds": 
+	[
+		"aws s3 sync s3://ipc-training.spotbatch.user.datadepotextract datadepotextract",
+		"cd ~",
+		"cd datadepotextract",
+		"tar xvzf datadepotextract-1.0.tar.gz",
+		"cd datadepotextract-1.0",
+		"sudo python setup.py install",
+		"cd ~"
+	]
+}

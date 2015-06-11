@@ -1,0 +1,6 @@
+{	
+	"dry_run":"false",
+	"vpc_ids":["vpc-f3f49896"],
+	"region_name":"us-east-1",
+	"profile_name":"spotbatchmgr.dev"
+}

@@ -1,0 +1,13 @@
+{
+	"instance_ids":["i-b3229a4c","i-89992276"],
+	"key_path_name_ext":"/home/pete.zybrick/.pzkeys/spotbatchmgr.pem",
+	"client_bootstrap_local_path_name_ext":"/home/pete.zybrick/Development/Workspaces/Python/awsspotbatch/src/awsspotbatch/client/clientbootstrap.py",
+	"client_bootstrap_remote_path_name_ext":"./clientbootstrap.py",
+	"client_cmds_local_path_name_ext":"/home/pete.zybrick/Development/Workspaces/Python/awsspotbatch/deployparm/deploycmds.txt",
+	"client_cmds_remote_path_name_ext":"./deploycmds.txt",
+	"awsext_zip_local_path_name_ext":"/home/pete.zybrick/Development/Workspaces/Python/awsext/dist/awsext-1.1.tar.gz",
+	"awsext_zip_remote_path_name_ext":"/home/ubuntu/awsspotbatch/pythoninstall/awsext-1.1.tar.gz",
+	"awsspotbatch_zip_local_path_name_ext":"/home/pete.zybrick/Development/Workspaces/Python/awsspotbatch/dist/awsspotbatch-1.1.tar.gz",
+	"awsspotbatch_zip_remote_path_name_ext":"/home/ubuntu/awsspotbatch/pythoninstall/awsspotbatch-1.1.tar.gz",
+	"remote_cmd":"python clientbootstrap.py deploycmds.txt"
+}

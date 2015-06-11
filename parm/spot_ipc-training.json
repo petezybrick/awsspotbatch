@@ -1,0 +1,8 @@
+{	
+	"region_name":"us-east-1",
+	"profile_name":"ipc-training",
+	"spot_master_uuid":"1a2b3c4d",
+	"queue_name":"pzt1",
+	"spot_instance_request_id":"sir-1234",
+	"script_name_args":["/home/pete.zybrick/temp/bashsleep.sh","60"]
+}

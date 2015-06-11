@@ -1,0 +1,8 @@
+{	
+	"region_name":"us-east-1",
+	"spot_request_uuid":"90719024-e546-11e4-9020-101f74edff46",
+	"spot_master_uuid":"89916ef0-e546-11e4-98da-101f74edff46",
+	"spot_request_id":"sri-0-1429305196",
+	"spot_request_queue_name":"spotbatch_spotrequest",
+	"script_name_args":["python", "user/testsleep.py", "120"]
+}

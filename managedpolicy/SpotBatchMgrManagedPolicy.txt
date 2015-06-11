@@ -1,0 +1,93 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CancelSpotInstanceRequests",
+                "ec2:CreateKeyPair",
+                "ec2:CreateTags",
+                "ec2:DeleteKeyPair",
+                "ec2:DescribeInstanceStatus",
+                "ec2:DescribeInstances",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeSpotInstanceRequests",
+                "ec2:RequestSpotInstances",
+                "ec2:TerminateInstances",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:CreateSecurityGroup",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeSpotPriceHistory"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sqs:CreateQueue",
+                "sqs:DeleteQueue",
+                "sqs:ListQueues",
+                "sqs:SetQueueAttributes",
+                "sqs:GetQueueUrl",
+                "sqs:SendMessage",
+                "sqs:ReceiveMessage",
+                "sqs:DeleteMessage",
+                "sqs:PurgeQueue"
+            ],
+            "Resource": [
+                "arn:aws:sqs:us-east-1:103782598449:spotbatch_spotmaster",
+                "arn:aws:sqs:us-east-1:103782598449:spotbatch_spotrequest"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateInstanceProfile",
+                "iam:CreateRole",
+                "iam:AddRoleToInstanceProfile",
+                "iam:PutRolePolicy",
+                "iam:PassRole",
+                "iam:ListRolePolicies",
+                "iam:RemoveRoleFromInstanceProfile",
+                "iam:DeleteRolePolicy",
+                "iam:DeleteRole",
+                "iam:DeleteInstanceProfile"
+            ],
+            "Resource": [
+                "arn:aws:iam::103782598449:role/spotrole_*",
+                "arn:aws:iam::103782598449:instance-profile/spotrole_*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListRoles",
+                "iam:ListInstanceProfiles"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:CreateTable",
+                "dynamodb:Scan",
+                "dynamodb:DescribeTable",
+                "dynamodb:GetItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem",
+                "dynamodb:Query"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:us-east-1:103782598449:table/spotbatch.spotmaster",
+                "arn:aws:dynamodb:us-east-1:103782598449:table/spotbatch.spotrequest",
+                "arn:aws:dynamodb:us-east-1:103782598449:table/spotbatch.spotrsakey",
+                "arn:aws:dynamodb:us-east-1:103782598449:table/spotbatch.spotbatchjobparm",
+                "arn:aws:dynamodb:us-east-1:103782598449:table/spotbatch.spotrequest/index/MasterUuid"
+            ]
+        }
+    ]
+}
